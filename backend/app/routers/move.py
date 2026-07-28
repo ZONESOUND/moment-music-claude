@@ -16,7 +16,7 @@ from app.services.prompt_generation import (
     interpret_move_to_narration,
     interpret_move_to_song,
 )
-from app.utils.audio_mixing import mix_narration_and_music
+from app.utils.audio_mixing import mix_narration_and_music, narration_music_duration
 from app.utils.helpers import estimate_song_duration, get_audio_duration
 
 router = APIRouter()
@@ -322,7 +322,7 @@ async def _handle_narration(motion_summary, engine, engine_name, duration, gener
 
     await engine.generate(
         prompt=interpretation.background_music_prompt,
-        duration=voice_duration,
+        duration=narration_music_duration(voice_duration),
         output_path=music_path,
     )
     engine.unload()

@@ -17,7 +17,7 @@ from app.services.prompt_generation import (
     interpret_weather_to_song,
 )
 from app.services.weather import get_weather_by_lat_lon
-from app.utils.audio_mixing import mix_narration_and_music
+from app.utils.audio_mixing import mix_narration_and_music, narration_music_duration
 from app.utils.helpers import estimate_song_duration, get_audio_duration
 
 router = APIRouter()
@@ -339,7 +339,7 @@ async def _handle_narration(req, engine, job_id: str | None = None):
     )
     tts_engine.unload()
 
-    # Match background music to actual voice duration
+    # Build a music bed around the measured voice, including intro and outro.
     voice_duration = await asyncio.to_thread(get_audio_duration, voice_path)
 
     if job_id:
@@ -350,7 +350,7 @@ async def _handle_narration(req, engine, job_id: str | None = None):
 
     await engine.generate(
         prompt=interpretation.background_music_prompt,
-        duration=voice_duration,
+        duration=narration_music_duration(voice_duration),
         output_path=music_path,
     )
     engine.unload()

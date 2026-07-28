@@ -215,7 +215,7 @@ Narration is more complex because it needs two GPU-bound operations sequentially
 ```
 TTS voice synthesis (Qwen3-TTS on GPU)
     ↓ measure voice duration
-Background music generation (ACE-STEP on GPU, duration = voice length)
+Background music generation (ACE-STEP on GPU, duration = voice length + 2.5s intro + 5s outro)
     ↓
 FFmpeg mix voice + music
     ↓

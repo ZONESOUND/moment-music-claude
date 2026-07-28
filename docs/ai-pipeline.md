@@ -205,7 +205,7 @@ Narration output involves three stages:
 
 1. **Script generation** — LLM writes narration text from mood interpretation
 2. **Voice synthesis** — Qwen3-TTS generates spoken audio from the script
-3. **Background music** — Selected engine generates ambient music matched to voice duration
+3. **Background music** — Selected engine generates ambient music matched to voice duration, plus a 2.5-second intro and 5-second outro
 4. **Mixing** — FFmpeg combines voice + music with appropriate levels (`utils/audio_mixing.py`)
 
 ---

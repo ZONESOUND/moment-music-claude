@@ -156,7 +156,7 @@ Each mode captures a different dimension of a moment.
 - Voice: Qwen3-TTS (local, open-source)
 - Background music: any instrumental engine
 - Mixing: FFmpeg combines voice track + music track at appropriate levels
-- Duration: background music auto-matched to voice duration
+- Duration: background music auto-matched to voice duration, plus a 2.5s faded intro and 5s faded outro
 
 ---
 
