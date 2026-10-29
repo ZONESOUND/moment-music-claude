@@ -103,7 +103,7 @@ Then fill in your Anthropic and OpenAI API keys in `backend/.env` and start the 
 5. **Start the app:**
    ```bash
    ./dev.sh                 # both frontend + backend
-   ./run-backend.sh         # http://localhost:8000
+   ./run-backend.sh         # http://localhost:8100
    ./run-frontend.sh        # http://localhost:5173
    ```
 
@@ -123,7 +123,7 @@ tmux new-session -s dev
 ./dev.sh
 ```
 
-Once the servers are up (frontend on `:5173`, backend on `:8000`), detach from the session:
+Once the servers are up (frontend on `:5173`, backend on `:8100`), detach from the session:
 
 > Press `Ctrl-b` then `d` to detach.
 
@@ -191,7 +191,7 @@ moment-music/
 
 **Frontend** serves the UI at `http://localhost:5173` with Vite's dev proxy forwarding `/api` requests to the backend.
 
-**Backend** runs the FastAPI server at `http://localhost:8000`, handling AI processing, job queue management, and audio serving.
+**Backend** runs the FastAPI server at `http://localhost:8100`, handling AI processing, job queue management, and audio serving.
 
 ## Music Engines
 

@@ -42,7 +42,7 @@ moment-music/
 ```
 
 **Frontend:** React + TypeScript + Vite on `http://localhost:5173`
-**Backend:** FastAPI + Python (uv) on `http://localhost:8000`
+**Backend:** FastAPI + Python (uv) on `http://localhost:8100`
 
 See `docs/architecture.md` for technical details.
 
